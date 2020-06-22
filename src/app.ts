@@ -16,10 +16,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-let safe = (expr: string | undefined) => (expr ? expr : '');
+let getOrElse = <T>(expr: T | undefined, fallback: T) => (expr ? expr : fallback);
 const config = {
-  channelAccessToken: safe(process.env.MESSAGE_API_CHANNEL_ACCESS_TOKEN),
-  channelSecret: safe(process.env.MESSAGE_API_CHANNEL_SECRET)
+  channelAccessToken: getOrElse(process.env.MESSAGE_API_CHANNEL_ACCESS_TOKEN, ''),
+  channelSecret: getOrElse(process.env.MESSAGE_API_CHANNEL_SECRET, '')
 };
 
 const client = new Client(config);
@@ -48,4 +48,4 @@ app.post('/webhook', middleware(config), (req, res) => {
 
 console.log('Starting the server...');
 
-app.listen(3000);
+app.listen(parseInt(getOrElse(process.env.PORT, '3000')));

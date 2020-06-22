@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node src/app.ts",
     "build": "tsc",
-    "clean": "rimraff dist/*"
+    "start": "node dist/app.js",
+    "clean": "rimraf dist/*"
   },
   "dependencies": {
     "@line/bot-sdk": "^7.0.0",

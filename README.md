@@ -1,6 +1,5 @@
 # covid19bot
 
-
 ```
 $ yarn install
 $ yarn dev
