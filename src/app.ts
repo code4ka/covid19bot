@@ -40,10 +40,13 @@ function handleEvent(event: WebhookEvent) {
 }
 
 const app = Express();
+app.get('/', (req, res) => {
+  res.send(getOrElse(process.env.SOURCE_VERSION, 'このプログラムにはイースターエッグ (隠し機能) はありません。'));
+});
 app.post('/webhook', middleware(config), (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
+    .then((result) => res.json(result));
 });
 
 console.log('Starting the server...');
