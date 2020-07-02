@@ -1,0 +1,380 @@
+[
+  {
+    "state": "neutral",
+    "state-id": "sid00000",
+    "next-state-ids": ["sid00001","sid00002","sid00003","sid00004","sid00005","sid00006","sid00007"],
+    "description": "root",
+    "to-url": ""
+  },
+  {
+    "state": "child",
+    "state-id": "sid00001",
+    "next-state-ids": ["sid00009","sid00010"],
+    "description": "子供の学校・保育について",
+    "to-url": ""
+  },
+  {
+    "state": "infrection",
+    "state-id": "sid00002",
+    "next-state-ids": ["sid00029","sid00030","sid00031"],
+    "description": "感染のおそれがある",
+    "to-url": ""
+  },
+  {
+    "state": "virus_status",
+    "state-id": "sid00003",
+    "next-state-ids": ["sid00011","sid00012","sid00013","sid00014"],
+    "description": "感染状況",
+    "to-url": ""
+  },
+  {
+    "state": "control_info",
+    "state-id": "sid00004",
+    "next-state-ids": [],
+    "description": "自粛情報",
+    "to-url": "千葉県/柏市"
+  },
+  {
+    "state": "economy_support",
+    "state-id": "sid00005",
+    "next-state-ids": [],
+    "description": "給付金・支援金",
+    "to-url": ""
+  },
+  {
+    "state": "about_virus",
+    "state-id": "sid00006",
+    "next-state-ids": [],
+    "description": "新型コロナウイルスについて",
+    "to-url": ""
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00007",
+    "next-state-ids": ["sid00033","sid00034","sid00035","sid00036","sid00037","sid00038","sid00039","sid00040"],
+    "description": "予防について",
+    "to-url": ""
+  },
+  {
+    "state": "profile",
+    "state-id": "sid00008",
+    "next-state-ids": [],
+    "description": "ユーザの属性について",
+    "to-url": ""
+  },
+  {
+    "state": "school",
+    "state-id": "sid00009",
+    "next-state-ids": ["sid00018","sid00019","sid00020"],
+    "description": "学校",
+    "to-url": ""
+  },
+  {
+    "state": "childcare",
+    "state-id": "sid00010",
+    "next-state-ids": [],
+    "description": "保育",
+    "to-url": "柏市福祉"
+  },
+  {
+    "state": "status_kashiwa",
+    "state-id": "sid00011",
+    "next-state-ids": [],
+    "description": "感染状況-柏",
+    "to-url": "柏市公式コロナページ"
+  },
+  {
+    "state": "status_chiba",
+    "state-id": "sid00012",
+    "next-state-ids": [],
+    "description": "感染状況-千葉",
+    "to-url": "千葉県コロナ対策サイト"
+  },
+  {
+    "state": "status_jp",
+    "state-id": "sid00013",
+    "next-state-ids": [],
+    "description": "感染状況-国",
+    "to-url": "厚生労働省HP"
+  },
+  {
+    "state": "status_tokyo",
+    "state-id": "sid00014",
+    "next-state-ids": [],
+    "description": "感染状況-東京",
+    "to-url": "東京都コロナ対策サイト"
+  },
+  {
+    "state": "bad_condition",
+    "state-id": "sid00015",
+    "next-state-ids": ["sid00021"],
+    "description": "感染のおそれがある - 体調不良",
+    "to-url": ""
+  },
+  {
+    "state": "pcr_check",
+    "state-id": "sid00016",
+    "next-state-ids": ["sid00026","sid00027"],
+    "description": "感染のおそれがある - 検査について",
+    "to-url": ""
+  },
+  {
+    "state": "other_condition",
+    "state-id": "sid00017",
+    "next-state-ids": ["sid00031","sid00043"],
+    "description": "感染のおそれがある - その他",
+    "to-url": ""
+  },
+  {
+    "state": "st_school",
+    "state-id": "sid00018",
+    "next-state-ids": [],
+    "description": "",
+    "to-url": "柏市教育委員会"
+  },
+  {
+    "state": "jr_school",
+    "state-id": "sid00019",
+    "next-state-ids": [],
+    "description": "",
+    "to-url": "柏市教育委員会"
+  },
+  {
+    "state": "hight_school",
+    "state-id": "sid00020",
+    "next-state-ids": [],
+    "description": "",
+    "to-url": "千葉県教育委員会"
+  },
+  {
+    "state": "hot_condition",
+    "state-id": "sid00021",
+    "next-state-ids": ["sid00022"],
+    "description": "発熱がある",
+    "to-url": ""
+  },
+  {
+    "state": "tired_condition",
+    "state-id": "sid00022",
+    "next-state-ids": ["sid00023"],
+    "description": "倦怠感・怠さがある",
+    "to-url": ""
+  },
+  {
+    "state": "cough_condition",
+    "state-id": "sid00023",
+    "next-state-ids": ["sid00024"],
+    "description": "咳などの症状がある",
+    "to-url": ""
+  },
+  {
+    "state": "breath_condition",
+    "state-id": "sid00024",
+    "next-state-ids": ["sid00025"],
+    "description": "息苦しさがある",
+    "to-url": ""
+  },
+  {
+    "state": "when_condition",
+    "state-id": "sid00025",
+    "next-state-ids": [],
+    "description": "いつから",
+    "to-url": "柏市保健所TEL / 病院URL / 柏市HP"
+  },
+  {
+    "state": "cost_check",
+    "state-id": "sid00026",
+    "next-state-ids": [],
+    "description": "検査費用",
+    "to-url": "厚生労働省HP"
+  },
+  {
+    "state": "needs_check",
+    "state-id": "sid00027",
+    "next-state-ids": [],
+    "description": "検査に必要なもの",
+    "to-url": "厚生労働省HP"
+  },
+  {
+    "state": "cluster_check",
+    "state-id": "sid00028",
+    "next-state-ids": [],
+    "description": "クラスター発生場所にいた",
+    "to-url": "柏市保健所TEL"
+  },
+  {
+    "state": "self_infrection",
+    "state-id": "sid00029",
+    "next-state-ids": ["sid00021"],
+    "description": "感染のおそれがある-自分",
+    "to-url": ""
+  },
+  {
+    "state": "family_infrection",
+    "state-id": "sid00030",
+    "next-state-ids": ["sid00021"],
+    "description": "感染のおそれがある-家族",
+    "to-url": ""
+  },
+  {
+    "state": "friend_infrection",
+    "state-id": "sid00031",
+    "next-state-ids": ["sid00032"],
+    "description": "感染のおそれがある-知人",
+    "to-url": ""
+  },
+  {
+    "state": "contact_infrection",
+    "state-id": "sid00032",
+    "next-state-ids": ["sid00021"],
+    "description": "最近、会ったか？",
+    "to-url": "接触確認アプリHP"
+  },
+  {
+    "state": "check_infrection",
+    "state-id": "sid00033",
+    "next-state-ids": [],
+    "description": "どこで検査できるか？",
+    "to-url": "柏市HP / 保健所HP(TEL)"
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00034",
+    "next-state-ids": [],
+    "description": "予防 - 自宅",
+    "to-url": "厚生労働省HP"
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00035",
+    "next-state-ids": [],
+    "description": "予防 -通勤",
+    "to-url": "厚生労働省HP"
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00036",
+    "next-state-ids": [],
+    "description": "予防 - 外食",
+    "to-url": "接触確認アプリHP"
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00037",
+    "next-state-ids": [],
+    "description": "予防 - 病院",
+    "to-url": "接触確認アプリHP"
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00038",
+    "next-state-ids": [],
+    "description": "予防 - 共通",
+    "to-url": "オリジナル?"
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00039",
+    "next-state-ids": [],
+    "description": "予防 - 会社・店舗経営者",
+    "to-url": "オリジナル?"
+  },
+  {
+    "state": "protection",
+    "state-id": "sid00040",
+    "next-state-ids": [],
+    "description": "予防 - 従業員",
+    "to-url": "接触確認アプリHP"
+  },
+  {
+    "state": "from_about_virus",
+    "state-id": "sid00041",
+    "next-state-ids": [],
+    "description": "コロナウイルス - 感染経路",
+    "to-url": "厚生労働省HP"
+  },
+  {
+    "state": "behaivor_about_virus",
+    "state-id": "sid00042",
+    "next-state-ids": [],
+    "description": "コロナウイルス - 症状",
+    "to-url": "厚生労働省HP"
+  },
+  {
+    "state": "contact_center",
+    "state-id": "sid00043",
+    "next-state-ids": ["sid00016"],
+    "description": "保健所から連絡が来た",
+    "to-url": ""
+  },
+  {
+    "state": "business_economy_support",
+    "state-id": "sid00044",
+    "next-state-ids": ["sid00050","sid00051","sid00052"],
+    "description": "経済的支援 - 事業者(法人/個人)",
+    "to-url": "経済産業省HP / 千葉県HP / 柏市HP"
+  },
+  {
+    "state": "person_economy_support",
+    "state-id": "sid00045",
+    "next-state-ids": [],
+    "description": "経済的支援 - 一般",
+    "to-url": "経済産業省HP / 千葉県HP / 柏市HP"
+  },
+  {
+    "state": "worker_economy_support",
+    "state-id": "sid00046",
+    "next-state-ids": [],
+    "description": "経済的支援 - 会社員",
+    "to-url": "経済産業省HP / 千葉県HP / 柏市HP"
+  },
+  {
+    "state": "student_economy_support",
+    "state-id": "sid00047",
+    "next-state-ids": [],
+    "description": "経済的支援 - 学生",
+    "to-url": "経済産業省HP / 千葉県HP / 柏市HP"
+  },
+  {
+    "state": "foreign_economy_support",
+    "state-id": "sid00048",
+    "next-state-ids": [],
+    "description": "経済的支援 - 外国人",
+    "to-url": "経済産業省HP / 千葉県HP / 柏市HP"
+  },
+  {
+    "state": "other_economy_support",
+    "state-id": "sid00049",
+    "next-state-ids": [],
+    "description": "経済的支援 - その他",
+    "to-url": "経済産業省HP / 千葉県HP / 柏市HP"
+  },
+  {
+    "state": "corp_economy",
+    "state-id": "sid00050",
+    "next-state-ids": [],
+    "description": "法人の場合",
+    "to-url": ""
+  },
+  {
+    "state": "person_biz_economy",
+    "state-id": "sid00051",
+    "next-state-ids": [],
+    "description": "個人の場合",
+    "to-url": ""
+  },
+  {
+    "state": "corp_type_economy",
+    "state-id": "sid00052",
+    "next-state-ids": "",
+    "description": "株式会社/社団法人",
+    "to-url": ""
+  },
+  {
+    "state": "npo_type_economy",
+    "state-id": "sid00053",
+    "next-state-ids": [],
+    "description": "NPO法人",
+    "to-url": ""
+  }
+"]
