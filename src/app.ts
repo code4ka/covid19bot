@@ -16,11 +16,15 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+
 let getOrElse = <T>(expr: T | undefined, fallback: T) => (expr ? expr : fallback);
 const config = {
   channelAccessToken: getOrElse(process.env.MESSAGE_API_CHANNEL_ACCESS_TOKEN, ''),
   channelSecret: getOrElse(process.env.MESSAGE_API_CHANNEL_SECRET, '')
 };
+
+let pushRequestToken = getOrElse(process.env.COVID19BOT_PUSH_TOKEN, '');
+let lineUserId = getOrElse(process.env.LINE_USER_ID, '');
 
 const client = new Client(config);
 function handleEvent(event: WebhookEvent) {
@@ -47,6 +51,23 @@ app.post('/webhook', middleware(config), (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result));
+});
+app.get('/push', (req, res) => {
+  console.log(req.query)
+  let r = req.query.token == pushRequestToken ? 'authorized' : 'unauthorized';
+  let n = req.query.number;
+
+  let f = () => {
+    client.pushMessage(
+      lineUserId,
+      {
+        type: 'text',
+        text: `本日の新規感染者は${n}人、確認されました。`
+      },
+    );
+  };
+  let re = new Promise(f);
+  res.send(r);
 });
 
 console.log('Starting the server...');
