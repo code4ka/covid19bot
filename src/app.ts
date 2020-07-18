@@ -58,8 +58,7 @@ app.get('/push', (req, res) => {
   let n = req.query.number;
 
   let f = () => {
-    client.pushMessage(
-      lineUserId,
+    client.broadcast(
       {
         type: 'text',
         text: `本日の新規感染者は${n}人、確認されました。`
