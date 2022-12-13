@@ -12,7 +12,7 @@
     "@line/bot-sdk": "^7.0.0",
     "@types/express": "^4.17.6",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "typescript": "^3.9.5"
   },
   "devDependencies": {
